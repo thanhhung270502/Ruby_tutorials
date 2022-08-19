@@ -189,13 +189,19 @@ class Hotel
     end
     
     def addCus(name, age, cmnd, days, type, num)
-        newCustomer = Customer.new(name, age, cmnd, days, type, num)
-        @data["Customer"].append(newCustomer)
         index = @data["Room"].checkRoom(num)
-        if (index != -1 && index != 100)
-            @data["Room"].getData[index][num].setStatus = "busy"
+        if (index != -1 && index != 100) 
+            if (@data["Room"].getData[index][num].getStatus == "free") 
+                newCustomer = Customer.new(name, age, cmnd, days, type, num)
+                @data["Customer"].append(newCustomer)
+                @data["Room"].getData[index][num].setStatus = "busy"
+                puts "Add successful customer with cmnd: #{cmnd}"
+            else
+                puts "Room #{num} is busy. "
+            end
+        else
+            puts "There don't have room #{num}. Please try to choose other room!!!"
         end
-        puts "Add successful customer with cmnd: #{cmnd}"
     end
 
     def searchCus(cmnd)

@@ -9,7 +9,7 @@ months.delete(months.keys[0])
 months.delete_if { |key, value|
     key == 3
 }
-
+# puts "#{months}"
 # Hash.each
 months.each{ |key, value|
     puts "key = #{key}, value = #{value}"
@@ -36,6 +36,6 @@ puts "#{h3}"
 # select
 h4 = h3.select{ |key, value|
     key > "a"
-    value > 300
+    value > 200
 }
 puts "#{h4}"

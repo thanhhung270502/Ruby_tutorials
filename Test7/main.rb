@@ -10,12 +10,13 @@ include Area
     end
     def calcArea()
         if (@length == @width)
-            return Area.square(@length)
+            return square(@length)
         else
-            return Area.rectangle(@length, @width)
+            return rectangle(@length, @width)
         end
     end
 end
 
 shape1 = Shape.new(5,10)
+puts shape1.square(5)
 puts shape1.calcArea()

@@ -1,8 +1,8 @@
 module Area
-    def Area.rectangle(a, b)
+    def rectangle(a, b)
         return a * b
     end
-    def Area.square(a)
+    def square(a)
         return a*a
     end
 end
